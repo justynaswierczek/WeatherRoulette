@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WeatherRoulette</title>
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+        .container {
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .box {
+            background-color: rgb(218, 162, 54);
+            border-radius: 15px;
+            padding: 5px;
+            margin-bottom: 15px;
+            width: 350px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .btn {
+            color: white;
+            background-color: rgba(236, 179, 57, 0.50);
+            border: rgba(236, 179, 57, 0.50);
+            justify-content: center;
+            align-items: center;
+        }
+        h1, h2 {
+            font-size: 28px;
+            margin: 0;
+        }
+        p {
+            text-align: center;
+        }
+        .title {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 35px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="title">Weather Roulette</div>
+    <div class="box">
+        <h1>{{ city }}</h1>
+    </div>
+    <div class="box">
+        <h2>{{ temp }} &#8451;</h2>
+    </div>
+    <p>
+        <button type="button" class="btn btn-primary btn-lg" onclick="window.location.href='{% url 'temp_somewhere' %}'">
+            Check other places
+        </button>
+        <button type="button" class="btn btn-primary btn-lg" onclick="window.location.href='.'">
+            Home
+        </button>
+    </p>
+</div>
+</body>
+</html>
